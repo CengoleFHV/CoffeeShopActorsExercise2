@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Hello Coffee World!");
         ActorSystem system = ActorSystem.create("coffeeShop");
         System.out.println("Created CoffeeShop ActorSystem");
-    ActorRef supervisor = system.actorOf(Props.create(SupervisorActor.class, 10), "supervisor");
+        ActorRef supervisor = system.actorOf(Props.create(SupervisorActor.class, 10), "supervisor");
 
         // Start the simulation
         supervisor.tell("start", ActorRef.noSender());
