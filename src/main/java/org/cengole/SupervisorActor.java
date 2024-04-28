@@ -22,7 +22,7 @@ public class SupervisorActor extends AbstractActor {
                     // start serving customers
                     customer.tell("order", getSelf());
                 })
-                .match(CoffeeReady.class, message -> {
+                .matchEquals("ready", message -> {
                     // increase count for served coffee
                     coffeesServed++;
 
